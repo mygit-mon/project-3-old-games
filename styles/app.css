@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary: #ff3700;
+  --nav-color: #ffffff;
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+
+  --text-black-500: rgba(255, 255, 255, 0.5);
+
+  --text-black-900: #272727;
+  --text-black-800: #848484;
+  --text-black-700: #d8d8d8;
+}
+
+body {
+  background: #000000;
+}
+
+/* Header CSS */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  z-index: 10;
+}
+
+header .search {
+  position: relative;
+  width: 400px;
+  height: 50px;
+}
+
+header .search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0px 16px !important;
+  outline: none;
+  background: transparent;
+  border: 1px solid var(--bg-black-50);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  color: var(--bg-black-900);
+}
+
+header .search input::placeholder {
+  color: var(--bg-black-900);
+}
+
+header .search .fa {
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  transform: translateY(-50%);
+  right: 16px;
+  color: var(--bg-black-900);
+  cursor: pointer;
+}
+
+/* Main CSS */
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url('../assets/banner/super-mario-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: auto;
+  transition: 0.5s;
+}
+
+.banner::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner .content {
+  position: relative;
+  max-width: 400px;
+  display: none;
+  visibility: hidden;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.banner .content.active {
+  display: block;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.banner .content .game-title {
+  max-width: 250px;
+}
+
+.banner .content h4 {
+  color: var(--text-black-500);
+  font-weight: 400x;
+  font-size: 30px;
+}
+
+.banner .content h4 span {
+  padding: 0 10px;
+  border-right: 1px solid;
+}
+
+.banner .content h4 span:first-child {
+  padding-left: 0;
+}
+
+.banner .content h4 span:last-child {
+  border: none;
+}
+
+.banner .content h4 i {
+  background: var(--primary);
+  color: white;
+  padding: 0 8px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.banner .content p {
+  font-size: 16px;
+  font-weight: 300px;
+  text-align: justify;
+  margin-top: 15px;
+  line-height: 25px;
+  color: var(--bg-black-50);
+  border-radius: 10px;
+}
+
+.banner .content .button {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.banner .content .button a {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: var(--primary);
+  color: var(--bg-black-100);
+  padding: 6px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.banner .content .button a:nth-child(2) {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--text-black-500);
+  transition: 0.5s;
+}
+
+.banner .content .button a:hover:nth-child(2) {
+  background: var(--primary);
+}
+
+.banner .content .button a i {
+  margin-right: 10px;
+}
+
+.banner .carousel-box {
+  position: relative;
+  min-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.banner .carousel-box .carousel {
+  position: relative;
+  height: 450px;
+}
+
+.banner .carousel-box .carousel .carousel-item {
+  width: 250px;
+  cursor: pointer;
+}
+
+.banner .carousel-box .carousel .carousel-item img {
+  max-width: 235px;
+  border-radius: 10px;
+  transform: translateX(8px) translateY(-100px);
+  object-fit: cover;
+  object-position: center;
+  height: 350px;
+}
+
+.banner .play {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--bg-black-900);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.banner .play:hover {
+  color: var(--primary);
+}
+
+.banner .play i {
+  margin-right: 8px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.banner .sci {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.banner .sci a {
+  color: var(--bg-black-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.banner .sci a:hover {
+  color: var(--primary);
+}
+
+.gameplay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.gameplay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.gameplay .youtube-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.gameplay .youtube-link:hover {
+  color: rgb(204, 5, 5);
+}
+
+.gameplay .youtube-link:hover span {
+  color: var(--primary);
+}
+
+.gameplay .youtube-link i {
+  font-size: 300px;
+  padding: 0;
+}
+
+.gameplay .youtube-link .youtube-inside {
+  width: 100px;
+  height: 120px;
+  background: white;
+  position: absolute;
+  z-index: -1;
+}
+
+.gameplay .youtube-link span {
+  color: white;
+  transition: 0.3s;
+}
+
+.gameplay video {
+  max-width: 900px;
+  outline: none;
+}
+
+.gameplay .fa-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 50px;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for large devices */
+  .banner {
+    padding: 0 50px;
+  }
+
+  .banner .content .game-title {
+    max-width: 100px;
+  }
+
+  .banner .content h4 {
+    font-size: 15px;
+  }
+
+  .banner .content p {
+    font-size: 14px;
+  }
+
+  .banner .carousel-box {
+    min-width: 450px;
+    padding-top: 40px;
+    margin-top: 20px;
+  }
+
+  .banner .carousel-box .carousel {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for medium devices */
+  header .nav {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0 50px;
+  }
+
+  .banner .content {
+    max-width: 100%;
+    margin-top: 100px;
+  }
+
+  .banner .content h4 {
+    font-size: 26px;
+  }
+
+  .banner .carousel-box {
+    margin-bottom: 110px;
+    padding-top: 40px;
+    min-width: 100%;
+  }
+
+  .banner .carousel-box .carousel {
+    height: 400px;
+  }
+
+  .banner .play {
+    bottom: 25px;
+  }
+
+  .banner .sci {
+    bottom: 25px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles for small devices */
+  header {
+    padding: 50px 20px;
+  }
+
+  header .nav {
+    display: none;
+  }
+
+  header .search {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0 50px;
+  }
+
+  .banner .content {
+    max-width: 100%;
+    margin-top: 100px;
+  }
+
+  .banner .content h4 {
+    font-size: 26px;
+  }
+
+  .banner .carousel-box {
+    min-width: 100%;
+    margin-bottom: 100px;
+    padding-top: 40px;
+  }
+
+  .banner .play {
+    bottom: 25px;
+  }
+
+  .banner .sci {
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Styles for extra small devices */
+  header {
+    padding: 50px 20px;
+  }
+
+  header .search {
+    display: none;
+  }
+
+  header .nav {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .banner .content {
+    min-width: 100%;
+    margin-top: 100px;
+  }
+
+  .banner .content h4 {
+    font-size: 16px;
+  }
+
+  .banner .carousel-box {
+    padding-top: 40px;
+  }
+
+  .banner .play {
+    display: none;
+  }
+
+  .banner .sci {
+    display: none;
+  }
+
+  .gameplay .youtube-link i {
+    font-size: 200px;
+  }
+
+  .gameplay .youtube-link .youtube-inside {
+    height: 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    padding: 50px 20px;
+  }
+
+  header .search {
+    display: none;
+  }
+
+  header .nav {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .banner .content {
+    padding: 10px;
+  }
+
+  .banner .content .game-title {
+    max-width: 200px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .banner .content h4 {
+    font-size: 18px;
+    margin-top: 120px;
+    text-align: center;
+  }
+
+  .banner .content .button a {
+    font-size: 12px;
+  }
+
+  .banner .play {
+    display: none;
+  }
+
+  .banner .sci {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  /* Styles for small phones */
+  header {
+    padding: 50px 20px;
+  }
+
+  header .search {
+    display: none;
+  }
+
+  header .nav {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .banner .content {
+    padding: 10px;
+  }
+
+  .banner .content .game-title {
+    max-width: 150px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .banner .content h4 {
+    font-size: 16px;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .banner .content p {
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .banner .content .button a {
+    font-size: 10px;
+  }
+}
