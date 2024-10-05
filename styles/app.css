@@ -600,3 +600,20 @@ header .search .fa {
     font-size: 10px;
   }
 }
+
+/* Desktop Mode Responsive */
+@media only screen and (min-width: 500px) and (min-height: 1200px) {
+  .banner .content .game-title {
+    max-width: 400px;
+  }
+
+  .banner .content h4 {
+    font-size: 40px;
+  }
+
+  .banner .content p {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 200px;
+  }
+}
