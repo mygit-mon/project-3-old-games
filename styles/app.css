@@ -470,6 +470,7 @@ header .search .fa {
   .banner {
     flex-direction: column;
     padding: 0 40px;
+    overflow: hidden;
   }
 
   .banner .content {
@@ -518,6 +519,7 @@ header .search .fa {
   .banner {
     flex-direction: column;
     padding: 0;
+    overflow: hidden;
   }
 
   .banner .content {
